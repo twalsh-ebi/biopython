@@ -18,11 +18,11 @@ from ._paml import Paml
 
 
 class BasemlError(EnvironmentError):
-    """BASEML failed. Run with verbose=True to view BASEML's error message."""
+    """baseml failed. Run with verbose=True to view baseml's error message."""
 
 
 class Baseml(Paml):
-    """An interface to BASEML, part of the PAML package."""
+    """An interface to baseml, part of the PAML package."""
 
     def __init__(self, alignment=None, tree=None, working_dir=None, out_file=None):
         """Initialize the Baseml instance.
@@ -66,7 +66,7 @@ class Baseml(Paml):
         }
 
     def write_ctl_file(self):
-        """Dynamically build a BASEML control file from the options.
+        """Dynamically build a baseml control file from the options.
 
         The control file is written to the location specified by the
         ctl_file property of the Baseml class.
@@ -102,7 +102,7 @@ class Baseml(Paml):
     def read_ctl_file(self, ctl_file):
         """Parse a control file and load the options into the Baseml instance.
 
-        Update each BASEML option to the new option if supplied or None if
+        Update each baseml option to the new option if supplied or None if
         not supplied. Raise an exception if the control file does not exist,
         a line is malformed, or an option is invalid.
         """
@@ -160,7 +160,7 @@ class Baseml(Paml):
     def _set_rel_paths(self):
         """Make file/directory paths relative to the PWD (PRIVATE).
 
-        BASEML requires that all paths specified in the control file be
+        baseml requires that all paths specified in the control file be
         relative to the directory from which it is called rather than
         absolute paths.
         """
@@ -169,15 +169,15 @@ class Baseml(Paml):
             self._rel_tree = os.path.relpath(self.tree, self.working_dir)
 
     def run(self, ctl_file=None, verbose=False, command="baseml", parse=True):
-        """Run baseml using the current configuration.
+        """Run ``baseml`` using the current configuration.
 
         Check that the tree file is specified and exists, and then
-        run BASEML. If parse is True then read and return the results,
+        run ``baseml``. If parse is True then read and return the results,
         otherwise return None. An exception is raised if the return code
-        of the BASEML command is non-zero.
+        of the ``baseml`` command is non-zero.
 
         The arguments may be passed as either absolute or relative paths,
-        despite the fact that BASEML requires relative paths.
+        despite the fact that ``baseml`` requires relative paths.
         """
         if self.tree is None:
             raise ValueError("Tree file not specified.")
@@ -190,7 +190,7 @@ class Baseml(Paml):
 
 
 def read(results_file):
-    """Parse a BASEML results file.
+    """Parse a baseml results file.
 
     Parse the file and return the results. Raise an exception if
     the results file does not exist, is empty, or is invalid.

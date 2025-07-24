@@ -5,7 +5,7 @@
 # Please see the LICENSE file that should have been included as part of this
 # package.
 
-"""Classes for the support of CODEML.
+"""Classes for the support of codeml.
 
 Maximum likelihood analysis using codon substitution models.
 """
@@ -17,18 +17,18 @@ from ._paml import Paml
 
 
 class CodemlError(EnvironmentError):
-    """CODEML failed. Run with verbose=True to view CODEML's error message."""
+    """codeml failed. Run with verbose=True to view codeml's error message."""
 
 
 class Codeml(Paml):
-    """An interface to CODEML, part of the PAML package."""
+    """An interface to codeml, part of the PAML package."""
 
     def __init__(self, alignment=None, tree=None, working_dir=None, out_file=None):
         """Initialize the Codeml instance.
 
         The user may optionally pass in strings specifying the locations
         of the input alignment and tree files, the working directory and
-        the final output file. Other options found in the CODEML control
+        the final output file. Other options found in the codeml control
         have typical settings by default to run site class models 0, 1 and
         2 on a nucleotide alignment.
         """
@@ -71,7 +71,7 @@ class Codeml(Paml):
         }
 
     def write_ctl_file(self):
-        """Dynamically build a CODEML control file from the options.
+        """Dynamically build a codeml control file from the options.
 
         The control file is written to the location specified by the
         ctl_file property of the Codeml class.
@@ -100,7 +100,7 @@ class Codeml(Paml):
     def read_ctl_file(self, ctl_file):
         """Parse a control file and load the options into the Codeml instance.
 
-        Update each CODEML option to the new option if supplied or None if
+        Update each codeml option to the new option if supplied or None if
         not supplied. Raise an exception if the control file does not exist,
         a line is malformed, or an option is invalid.
         """
@@ -171,7 +171,7 @@ class Codeml(Paml):
     def _set_rel_paths(self):
         """Make all file/directory paths relative to the PWD (PRIVATE).
 
-        CODEML requires that all paths specified in the control file be
+        codeml requires that all paths specified in the control file be
         relative to the directory from which it is called rather than
         absolute paths.
         """
@@ -180,15 +180,15 @@ class Codeml(Paml):
             self._rel_tree = os.path.relpath(self.tree, self.working_dir)
 
     def run(self, ctl_file=None, verbose=False, command="codeml", parse=True):
-        """Run CODEML using the current configuration.
+        """Run ``codeml`` using the current configuration.
 
         Check that the tree file is specified and exists, and then
-        run CODEML. If parse is True then read and return the results,
+        run ``codeml``. If parse is True then read and return the results,
         otherwise return None. An exception is raised if the return code
-        of the CODEML command is non-zero.
+        of the ``codeml`` command is non-zero.
 
         The arguments may be passed as either absolute or relative
-        paths, despite the fact that CODEML requires relative paths.
+        paths, despite the fact that ``codeml`` requires relative paths.
         """
         if self.tree is None:
             raise ValueError("Tree file not specified.")
@@ -201,7 +201,7 @@ class Codeml(Paml):
 
 
 def read(results_file):
-    """Parse a CODEML results file.
+    """Parse a codeml results file.
 
     Return the results if there are any. Raise an exception if
     the results file does not exist, is empty, or is invalid.

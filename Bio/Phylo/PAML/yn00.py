@@ -103,11 +103,11 @@ class Yn00(Paml):
                 self._options[option] = None
 
     def run(self, ctl_file=None, verbose=False, command="yn00", parse=True):
-        """Run yn00 using the current configuration.
+        """Run ``yn00`` using the current configuration.
 
         If parse is True then read and return the result, otherwise
         return None. An exception is raised if the return code of
-        the yn00 command is non-zero.
+        the ``yn00`` command is non-zero.
         """
         Paml.run(self, ctl_file, verbose, command)
         if parse:
