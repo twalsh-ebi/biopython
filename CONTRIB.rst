@@ -135,6 +135,7 @@ please open an issue on GitHub or mention it on the mailing list.
 - Francisco Pina-Martins <https://github.com/StuntsPT>
 - Franco Caramia <https://github.com/fcaramia>
 - Frank Kauff <https://github.com/frankkl>
+- Franziska Arndt
 - François Coste <https://github.com/francoiscoste>
 - Frederic Sapet <https://github.com/FredericBGA>
 - Frederic Sohm <fsms at domain users.sourceforge.net>
@@ -337,6 +338,7 @@ please open an issue on GitHub or mention it on the mailing list.
 - Thomas Rosleff Soerensen <rosleff at domain mpiz-koeln.mpg.de>
 - Thomas Schmitt <https://github.com/wurstbonbon>
 - Thomas Sicheritz-Ponten <thomas at domain cbs.dtu.dk>
+- Thomas Walsh <twalsh at ebi dot ac dot uk>
 - Tiago Antao <https://github.com/tiagoantao>
 - Tianyi Shi <https://github.com/TianyiShi2001>
 - Tim Burke <https://github.com/tipabu>
